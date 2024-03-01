@@ -1,6 +1,7 @@
 
 let campoAmigo = document.getElementById("nome-amigo");
 let listaAmigos = document.getElementById("lista-amigos");
+let listaSorteio = document.getElementById("lista-sorteio");
 let amigos = [];
 
 function adicionar() {
@@ -18,7 +19,6 @@ function adicionar() {
 }
 
 function sortear() {
-    let listaSorteio = document.getElementById("lista-sorteio");
     embaralha(amigos);
     
     for(let i = 0; i < amigos.length; i++) {
@@ -28,6 +28,13 @@ function sortear() {
             listaSorteio.innerHTML = listaSorteio.innerHTML + amigos[i] + " --> " + amigos[i+1] + "<br>";
         }
     }
+}
+
+function reiniciar() {
+    listaAmigos.textContent = "";
+    listaSorteio.textContent = "";
+    amigos = [];
+    console.log(amigos);
 }
 
 function embaralha(lista) {
