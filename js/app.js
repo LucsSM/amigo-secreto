@@ -50,7 +50,10 @@ function renderizarLista () {
     amigos.forEach((amigo, index) => {
         let amigoElement = document.createElement("span");
         amigoElement.textContent = amigo;
-        amigoElement.onclick = () => excluirAmigo(index);
+        // amigoElement.onclick = () => excluirAmigo(index);
+        amigoElement.addEventListener("click", () => {
+            excluirAmigo(index);
+        })
         
         if (listaAmigos.innerHTML == "") {
             listaAmigos.appendChild(amigoElement);
