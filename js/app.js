@@ -5,10 +5,15 @@ let listaSorteio = document.getElementById("lista-sorteio");
 let amigos = [];
 
 function adicionar() {
-    let amigo = campoAmigo.value;
+    let amigo = campoAmigo.value.toUpperCase();
     
     if (amigo == "") {
         alert("é necessário digitar o nome do amigo.");
+        return;
+    }
+
+    if (amigos.includes(amigo)) {
+        alert("Esse nome já foi inserido na lista de amigos!");
         return;
     }
     amigos.push(amigo);
@@ -26,6 +31,12 @@ function adicionar() {
 }
 
 function sortear() {
+
+    if (amigos.length < 3) {
+        alert("É necessário pelo menos 3 amigos para realizar o sorteio.");
+        return;
+    }
+
     embaralha(amigos);
     listaSorteio.innerHTML = "";
     
