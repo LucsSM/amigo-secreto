@@ -6,15 +6,20 @@ let amigos = [];
 
 function adicionar() {
     let amigo = campoAmigo.value;
+    
+    if (amigo == "") {
+        alert("é necessário digitar o nome do amigo.");
+        return;
+    }
     amigos.push(amigo);
-    
-    //modo antigo
-    // if (listaAmigos.textContent == "") {
-    //     listaAmigos.textContent = amigo;
-    // } else {
-    //     listaAmigos.textContent = listaAmigos.textContent + ", " + amigo;
-    // }
-    
+        
+        //modo antigo
+        // if (listaAmigos.textContent == "") {
+            //     listaAmigos.textContent = amigo;
+            // } else {
+                //     listaAmigos.textContent = listaAmigos.textContent + ", " + amigo;
+                // }
+                
     renderizarLista();
     campoAmigo.value = "";
     campoAmigo.focus();
